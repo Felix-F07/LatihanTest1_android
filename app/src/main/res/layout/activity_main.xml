@@ -4,118 +4,383 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
     android:background="#121212">
 
-    <!-- Judul -->
-    <TextView
+    <!-- Isi halaman yang bisa di-scroll -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
-    <!-- Profile -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Profile -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="20dp"
+                android:background="#6C5CE7">
+
+                <ImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:contentDescription="Profile Photo" />
+
+                <TextView
+                    android:id="@+id/tvNama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sarah Johnson"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/tvJabatan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="System Administrator"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- Account Information -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Information"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Email -->
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email\nsarah@school.edu"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:padding="15dp"
+                android:background="#262626"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Phone -->
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone\n+1 (555) 987-6547"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:padding="15dp"
+                android:layout_marginTop="8dp"
+                android:background="#262626"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Institution -->
+            <TextView
+                android:id="@+id/tvInstitution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Institution\nUniversity of Oxford"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:padding="15dp"
+                android:layout_marginTop="8dp"
+                android:background="#262626" />
+
+            <!-- Role -->
+            <TextView
+                android:id="@+id/tvRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Role\nAdmin"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:padding="15dp"
+                android:layout_marginTop="8dp"
+                android:background="#262626"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- ========================= -->
+            <!-- NOTIFICATIONS -->
+            <!-- ========================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/bg_notification">
+
+                <!-- Push Notification -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:text="♧"
+                        android:textColor="#AAAAAA"
+                        android:textSize="20sp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Push Notification"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receive alerts on your device"
+                            android:textColor="#999999"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+
+                </LinearLayout>
+
+                <!-- Email Notification -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:text="✉"
+                        android:textColor="#AAAAAA"
+                        android:textSize="19sp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email Notification"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receive updates via email"
+                            android:textColor="#999999"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- ========================= -->
+    <!-- BOTTOM NAVIGATION -->
+    <!-- ========================= -->
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:padding="20dp"
-        android:background="#6C5CE7">
+        android:background="#171717"
+        android:weightSum="5">
 
-        <ImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:contentDescription="Profile Photo" />
+        <!-- Home -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-        <TextView
-            android:id="@+id/tvNama"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sarah Johnson"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⌂"
+                android:textColor="#999999"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/tvJabatan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="System Administrator"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="#999999"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <!-- Map -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⌖"
+                android:textColor="#999999"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Map"
+                android:textColor="#999999"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <!-- Manage -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▦"
+                android:textColor="#999999"
+                android:textSize="19sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage"
+                android:textColor="#999999"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <!-- Report -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="▥"
+                android:textColor="#999999"
+                android:textSize="19sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report"
+                android:textColor="#999999"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <!-- Profile -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="♙"
+                android:textColor="#6C5CE7"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="#6C5CE7"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <!-- Account Information -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Account Information"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp" />
-
-    <!-- Email -->
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Email\nsarah@school.edu"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:padding="15dp"
-        android:background="#262626"
-        android:clickable="true"
-        android:focusable="true" />
-
-    <!-- Phone -->
-    <TextView
-        android:id="@+id/tvPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone\n+1 (555) 987-6547"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"
-        android:background="#262626"
-        android:clickable="true"
-        android:focusable="true" />
-
-    <!-- Institution -->
-    <TextView
-        android:id="@+id/tvInstitution"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Institution\nUniversity of Oxford"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"
-        android:background="#262626" />
-
-    <!-- Role -->
-    <TextView
-        android:id="@+id/tvRole"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Role\nAdmin"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:padding="15dp"
-        android:layout_marginTop="8dp"
-        android:background="#262626"
-        android:clickable="true"
-        android:focusable="true" />
 
 </LinearLayout>
